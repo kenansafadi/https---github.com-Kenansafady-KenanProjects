@@ -1,0 +1,212 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.pagination-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-button:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.pagination-button.active {
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: bold;
+}
+
+.no-cards-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.no-cards-found h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: inherit;
+}
+
+.no-cards-found p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    color: inherit;
+}
+
+.no-cards-found a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.no-cards-found a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    padding: 1rem 0;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #dfe6e9;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+body.dark-mode footer a:hover {
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .home-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .pagination-container {
+        margin-top: 10px;
+    }
+
+    .pagination-button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .no-cards-found h2 {
+        font-size: 1.5rem;
+    }
+
+    .no-cards-found p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 0.8rem 0;
+    }
+
+    footer a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .no-cards-found h2 {
+        font-size: 1.2rem;
+    }
+
+    .no-cards-found p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.85rem;
+    }
+
+    .pagination-button {
+        font-size: 0.7rem;
+    }
+}

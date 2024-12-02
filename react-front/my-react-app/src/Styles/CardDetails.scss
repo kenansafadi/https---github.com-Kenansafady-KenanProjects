@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap');
+
+.card-details {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+
+    h2 {
+        text-align: center;
+        font-size: 1.5em;
+        margin: 0;
+        color: #333;
+        font-family: 'Lora', serif;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+    img {
+        width: 100%;
+        height: auto; // שמירה על יחס גובה-רוחב של התמונה
+        border-radius: 5px; // עיגול הפינות של התמונה
+        margin: 10px 0; // רווח מעל ומתחת לתמונה
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'Oswald', sans-serif; // שימוש בגופן Oswald לכותרת המשנית
+        color: #666; // אפור בהיר לכותרת המשנית
+        max-width: 100%; // מונע מהכותרת להימרח
+        word-wrap: break-word; // מוודא שהמילים הארוכות יפלו לשורה חדשה
+    }
+
+    p {
+        font-size: 0.9em; // גודל פונט רגיל לפסקאות
+        margin: 5px 0; // רווח בין הפסקאות
+        color: #444; // אפור כהה לטקסט
+        max-width: 100%; // מונע מהטקסט להימרח
+        word-wrap: break-word; // מוודא שהמילים הארוכות יפלו לשורה חדשה
+    }
+
+    .card-contact {
+        margin: 15px 0; // רווח מעל ומתחת לפרטי יצירת קשר
+        border-top: 1px solid #eee; // גבול עדין מעל פרטי יצירת קשר
+        padding-top: 10px; // רווח בין הגבול לטקסט
+
+        p {
+            margin: 5px 0; // רווח בין כל פרטי יצירת קשר
+        }
+    }
+
+    .card-address {
+        font-weight: bold; // הדגשת כתובת בעזרת פונט בולט
+        color: #333; // אפור כהה לכתובת
+        max-width: 100%; // מונע מהכתובת להימרח
+        word-wrap: break-word; // מוודא שהמילים הארוכות יפלו לשורה חדשה
+    }
+
+    .map-container {
+        margin-top: 20px; // רווח מעל קונטיינר המפה
+        text-align: center; // ממרכז את הטקסט בתוך קונטיינר המפה
+
+        h4 {
+            margin: 10px 0; // רווח מעל ומתחת לכותרת המפה
+        }
+
+        iframe {
+            border: none; // מסיר גבול ברירת מחדל מה-iframe
+            border-radius: 5px; // עיגול הפינות של ה-iframe
+            width: 100%; // מבטיח שה-iframe יתאים לרוחב
+            max-width: 100%; // מבטיח שה-iframe לא יחרוג מההורה שלו
+        }
+
+        a {
+            display: inline-block; // הופך את הקישור לאובייקט בלוק לשיפור הרווחים
+            margin-top: 10px; // רווח מעל הקישור
+            text-decoration: none; // מסיר קו תחתי מהקישור
+            color: #007bff; // צבע ראשי לקישורים של Bootstrap
+            transition: color 0.2s; // מעבר חלק כשצבע הקישור משתנה
+
+            &:hover {
+                color: #0056b3; // כחול כהה בעת ריחוף מעל הקישור
+            }
+        }
+    }
+}
+
+body.dark-mode .card-details {
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    h2 {
+        color: #00ddff;
+    }
+
+    h3 {
+        color: #ccc;
+    }
+
+    p {
+        color: #bbb;
+    }
+
+    .card-contact p {
+        color: #ccc;
+    }
+
+    .card-address {
+        color: #fff;
+    }
+
+    .map-container {
+        iframe {
+            background-color: #1e1e1e;
+        }
+
+        a {
+            color: #66ccff;
+
+            &:hover {
+                color: #33aaff;
+            }
+        }
+    }
+}

@@ -1,0 +1,189 @@
+.business-card {
+    background-color: #fff;
+    border-radius: 2rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 2rem;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    .card-info {
+        padding: 20px;
+        position: relative;
+
+        h2 {
+            font-size: 1.6rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #757575;
+            margin: 5px 0;
+            font-weight: 400;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #616161;
+            margin: 10px 0;
+        }
+
+        .card-divider {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background-color: #ddd;
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+    .card-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px 0;
+        position: relative;
+
+        .like-icon,
+        .phone-icon {
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .like-icon {
+            color: #ff6347;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+                color: #d9534f;
+            }
+        }
+
+        .phone-icon {
+            color: #2c3e50;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+                color: #27ae60;
+            }
+        }
+
+        .edit-icon,
+        .delete-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #007bff;
+            }
+        }
+    }
+
+    body.dark-mode & {
+        background-color: #333;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.05);
+
+        .card-info {
+            color: #fff;
+        }
+
+        .card-divider {
+            background-color: #444;
+        }
+
+        .like-icon,
+        .phone-icon {
+            color: #ccc;
+        }
+
+        .like-icon:hover {
+            color: #ff6347;
+        }
+
+        .phone-icon:hover {
+            color: #1abc9c;
+        }
+    }
+}
+
+.card-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.list-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.delete-icon,
+.edit-icon,
+.like-icon,
+.phone-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.edit-icon:hover,
+.delete-icon:hover,
+.like-icon:hover,
+.phone-icon:hover {
+    color: #007bff;
+}
+
+.like-icon {
+    color: red;
+}
+
+.phone-icon {
+    color: black;
+}
+
+.delete-icon,
+.edit-icon,
+.like-icon,
+.phone-icon {
+    flex-grow: 1;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
