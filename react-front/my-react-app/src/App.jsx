@@ -14,6 +14,7 @@ import Favorites from './pages/Favorites';
 import BusinessList from './pages/BusinessList';
 import NoCardsFound from './pages/noCardsFound';
 import Profile from './components/Auth/profile';
+import EditProfile from './components/Bussiness/EditProfile';
 const App = () => {
   const [cards, setCards] = useState([]);
   const [originalCards, setOriginalCards] = useState([]);
@@ -53,6 +54,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home cards={cards} />} />
             <Route path="/favourites" element={<Favorites />} />
+            <Route path="/edit-profile" element={<EditProfile />} />
+
             <Route path="/business/:id" element={<CardDetails />} />
             <Route path="/no-cards-found" element={<NoCardsFound />} />
             <Route path="/my-business-cards" element={<BusinessList />} />
@@ -71,8 +74,9 @@ const App = () => {
             <Route path="*" element={<h2>Page Not Found</h2>} />
 
           </Routes>
-          <Footer />
+
         </Router>
+        <Footer />
       </BusinessProvider>
     </AuthProvider>
   );

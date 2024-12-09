@@ -1,7 +1,6 @@
-
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import businessService from '../../Services/BusinessServices';
+
 export const BusinessContext = createContext();
 
 export const BusinessProvider = ({ children }) => {
@@ -31,7 +30,20 @@ export const BusinessProvider = ({ children }) => {
 
     useEffect(() => {
         fetchBusinesses();
+
+        // Load the favorites from localStorage
+        const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+        if (storedFavorites) {
+            setFavorites(storedFavorites);
+        }
     }, []);
+
+    useEffect(() => {
+        // Store the updated favorites in localStorage whenever it changes
+        if (favorites.length > 0) {
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }
+    }, [favorites]);
 
     const findCardById = (cardId) => businesses.find((card) => card._id === cardId);
 

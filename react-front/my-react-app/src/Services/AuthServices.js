@@ -6,8 +6,24 @@ import { jwtDecode } from 'jwt-decode';
 const LOGIN_URL = `${BASE_URL}/users/login`;
 const REGISTER_URL = `${BASE_URL}/users`;
 const USER_URL = `${BASE_URL}/users`;
-
 const authService = {
+
+    updateUser: async (profileData) => {
+        const response = await fetch('/api/users/profile', { // Adjust URL accordingly
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            },
+            body: JSON.stringify(profileData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to update user profile');
+        }
+
+        return response.json();
+    },
     login: async (credentials) => {
         try {
             const response = await fetch(LOGIN_URL, {
@@ -83,7 +99,7 @@ const authService = {
                 method: 'GET',
                 headers: {
                     ...getHeaders(),
-                    'x-auth-token': token, // Add the token in the headers
+                    'x-auth-token': token,
                 },
             });
 
@@ -111,6 +127,7 @@ const authService = {
     isAuthenticated: () => {
         return !!localStorage.getItem('authToken');
     },
+
 };
 
 export default authService;

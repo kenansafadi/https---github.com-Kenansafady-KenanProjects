@@ -9,7 +9,7 @@ const FavBusinessCards = ({ card, onImageClick }) => {
 
     const handleLikeClick = async () => {
         console.log("Like button clicked for card ID:", card._id);
-        await toggleFavorite(card._id); // Toggle favorite status
+        await toggleFavorite(card._id);
     };
 
     return (

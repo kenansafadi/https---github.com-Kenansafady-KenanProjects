@@ -93,3 +93,49 @@
         display: none;
     }
 }
+
+body.dark-mode {
+    .form-modal {
+        background-color: #333;
+        color: #f1f1f1;
+    }
+
+    .form-modal h2 {
+        color: #f1f1f1;
+    }
+
+    .form-modal label {
+        color: #ccc;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="number"],
+    textarea {
+        background-color: #555;
+        color: #fff;
+        border: 1px solid #888;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="url"]:focus,
+    input[type="number"]:focus,
+    textarea:focus {
+        border-color: #007bff;
+    }
+
+    button {
+        background-color: #1e3a5f;
+        color: #e1e1e1;
+    }
+
+    button:hover {
+        background-color: #006bb3;
+    }
+
+
+}

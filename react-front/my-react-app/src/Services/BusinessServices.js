@@ -69,7 +69,7 @@ const businessService = {
                 },
             });
 
-            console.log('Response status:', response.status, 'Response body:', await response.clone().text()); // Log the full response
+            console.log('Response status:', response.status, 'Response body:', await response.clone().text());
 
             if (!response.ok) {
                 const errorBody = await response.text();
@@ -107,8 +107,8 @@ const businessService = {
         }
     },
     createCard: async (cardData) => {
-        const token = localStorage.getItem('create_card_token');
-        console.log('Retrieved token from local storage:', token);
+        const token = getToken(MY_CARDS_TOKEN_KEY);
+        console.log('Retrieved token from getToken:', token);
 
         if (!token) {
             console.error('No token found. Please log in again.');
@@ -127,6 +127,7 @@ const businessService = {
 
             if (!response.ok) {
                 const errorText = await response.text();
+                console.error('Error response:', errorText);
                 throw new Error(errorText);
             }
 
@@ -137,6 +138,8 @@ const businessService = {
             throw error;
         }
     },
+
+
 
 
     updateBizNumber: async (cardId, newBizNumber) => {
@@ -179,6 +182,28 @@ const businessService = {
     removeCardToken: () => {
         removeToken(CREATE_CARD_TOKEN_KEY);
     },
+    updateUserProfile: async (profileData) => {
+        const token = getToken(MY_CARDS_TOKEN_KEY); // Use appropriate token management
+
+        try {
+            const response = await fetch(`${BASE_URL}/update-profile`, {
+                method: 'PUT',
+                headers: {
+                    ...getHeaders(true),
+                    'x-auth-token': token,  // Attach the token
+                },
+                body: JSON.stringify(profileData),  // Send the updated profile data
+            });
+
+            if (!response.ok) throw new Error('Failed to update profile');
+            return await response.json();  // Return the updated profile data
+        } catch (error) {
+            console.error('Error updating profile:', error);
+            throw error;
+        }
+    },
 };
+
+
 
 export default businessService;

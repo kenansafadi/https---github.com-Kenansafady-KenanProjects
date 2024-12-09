@@ -48,11 +48,12 @@ function Profile() {
         <div className="profile-container">
             <div className="profile-card">
                 <h2>User Profile</h2>
-                <p>Name: {`${profile.name?.first || ''} ${profile.name?.middle || ''} ${profile.name?.last || ''}`}</p>
+                <p>Name: {`${profile.name?.first || 'N/A'} ${profile.name?.middle || ''} ${profile.name?.last || 'N/A'}`}</p>
                 <p>Email: {profile.email || 'N/A'}</p>
                 <p>Phone: {profile.phone || 'N/A'}</p>
                 <p>Auth Level: {profile.isBusiness ? 'Business' : 'Regular'}</p>
-                <p>Address: {`${profile.address?.houseNumber || ''} ${profile.address?.street || ''}, ${profile.address?.city || ''}, ${profile.address?.country || ''}`}</p>
+                <p>Address: {`${profile.address?.houseNumber || ''} ${profile.address?.street || 'N/A'}, ${profile.address?.city || 'N/A'}, ${profile.address?.country || 'N/A'}`}</p>
+
                 <div className="map">
                     <iframe
                         title="user-location"

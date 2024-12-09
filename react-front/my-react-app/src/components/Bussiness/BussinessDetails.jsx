@@ -5,7 +5,7 @@ import businessService from '../../Services/BusinessServices';
 import '../../Styles/CardDetails.scss';
 
 const CardDetails = () => {
-    const { cardId } = useParams(); // Get the cardId from the URL param
+    const { cardId } = useParams();
     const [card, setCard] = useState(null);
 
     useEffect(() => {
@@ -45,7 +45,7 @@ const CardDetails = () => {
                             {card.web}
                         </a>
                     ) : (
-                        'N/A' // Display 'N/A' if there's no website URL
+                        'N/A'
                     )}
                 </p>
             </div>
